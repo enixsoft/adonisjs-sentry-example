@@ -32,7 +32,7 @@ This is an example project demonstrating how to integrate Sentry with an AdonisJ
 
 ### Local Development
 
-If you have Node.js installed locally:
+If you have Node.js and pnpm installed locally:
 
 1. Install dependencies:
    ```bash
@@ -103,6 +103,3 @@ The following environment variables are required:
 - `LOG_LEVEL`: Logging level (default: info)
 - `TZ`: Timezone (default: UTC)
 
-## License
-
-MIT 

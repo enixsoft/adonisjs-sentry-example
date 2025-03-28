@@ -1,0 +1,14 @@
+diff --git a/build/providers/sentry_provider.js b/build/providers/sentry_provider.js
+index cad890a0db3a699d3d4314ab15c0723106861bc2..2a08499880f6579b4fcd2cf3ef94ae988b33700d 100644
+--- a/build/providers/sentry_provider.js
++++ b/build/providers/sentry_provider.js
+@@ -8,6 +8,9 @@ export default class SentryProvider {
+         const config = this.app.config.get('sentry', {});
+         if (config.enabled) {
+             Sentry.init(config);
++
++            await import('node:http');
++            await import('node:https');
+         }
+     }
+ }

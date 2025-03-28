@@ -8,7 +8,8 @@ WORKDIR /home/appuser/app
 RUN corepack enable && \
     corepack prepare pnpm@latest-10 --activate
 
-COPY package.json pnpm-lock.yaml .npmrc ./
+COPY package.json pnpm-lock.yaml ./
+COPY patches ./patches
 
 ENV CI=1
 

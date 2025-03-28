@@ -29,4 +29,9 @@ export default defineConfig({
    * @see https://docs.sentry.io/platforms/javascript/guides/node/configuration/sampling
    */
   tracesSampleRate: env.get('SENTRY_TRACES_SAMPLE_RATE', 1),
+
+  /**
+   * Enable debug mode
+   */
+  debug: true,
 })

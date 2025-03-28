@@ -8,33 +8,19 @@
 */
 
 import router from '@adonisjs/core/services/router'
-import { Sentry } from '@rlanz/sentry'
 
-router.get('/test/error', async () => {
-  throw new Error('Test error')
-})
+const TestsController = () => import('../app/controllers/tests_controller.js')
 
-router.get('/test/span/:id', async (ctx) => {
-  const id = ctx.params.id
-
-  await Sentry.startSpan({ name: `test/span/${id}` }, async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-  })
-
+router.get('/', async () => {
   return {
-    spanId: id,
+    message: 'Hello World',
   }
 })
 
-router.get('/test/user/:id', async (ctx) => {
-  const id = ctx.params.id
-
-  Sentry.setUser({
-    id,
-    email: 'test@test.test',
+router
+  .group(() => {
+    router.get('/error', [TestsController, 'error'])
+    router.get('/span/:id', [TestsController, 'span'])
+    router.get('/user/:id', [TestsController, 'user'])
   })
-
-  return {
-    userId: id,
-  }
-})
+  .prefix('/test')

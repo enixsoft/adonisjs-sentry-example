@@ -7,4 +7,7 @@ services:
       - "3333:3333"
     env_file:
       - .env
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
     restart: always
