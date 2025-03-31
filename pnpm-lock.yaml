@@ -22,9 +22,6 @@ importers:
       '@rlanz/sentry':
         specifier: ^0.3.3
         version: 0.3.3(patch_hash=0e2effcd1b9ff7840cc9a882822aa028a47f6c116c17fc0e00ed709dbea98ba7)
-      '@sentry/node':
-        specifier: 9.10.0
-        version: 9.10.0
       '@vinejs/vine':
         specifier: ^3.0.0
         version: 3.0.1
