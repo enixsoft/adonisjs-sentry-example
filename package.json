@@ -55,6 +55,7 @@
     "@rlanz/sentry": "^0.3.3",
     "@sentry/node": "9.10.0",
     "@vinejs/vine": "^3.0.0",
+    "axios": "^1.8.4",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
